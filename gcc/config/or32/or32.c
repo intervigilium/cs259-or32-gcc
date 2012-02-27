@@ -2131,7 +2131,7 @@ or32_output_mi_thunk (FILE *file, tree thunk ATTRIBUTE_UNUSED,
 
 static bool
 or32_handle_option (size_t code, const char *arg ATTRIBUTE_UNUSED,
-		    int value ATTRIBUTE_UNUSED)
+		    int value)
 {
   switch (code)
     {
@@ -2144,6 +2144,9 @@ or32_handle_option (size_t code, const char *arg ATTRIBUTE_UNUSED,
     case OPT_mglibc:
       or32_libc = or32_libc_glibc;
       return false;
+    case OPT_mregistermask:
+      or32_register_mask = value;
+      return true;
     default:
       return true;
     }
