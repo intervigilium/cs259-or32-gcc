@@ -2145,7 +2145,15 @@ or32_handle_option (size_t code, const char *arg ATTRIBUTE_UNUSED,
       or32_libc = or32_libc_glibc;
       return false;
     case OPT_mregistermask:
-      or32_register_mask = value;
+      // fix_register cannot fix special registers though, eg. r0, r1, r9, r10
+      int mask = 0;
+      const char * reg_names[] = REGISTER_NAMES;
+      for (int i = 0; i < 32; i++) {
+        mask = 1 << i;
+        if (mask & value) {
+          fix_register(reg_names[i], 1, 1);
+        }
+      }
       return true;
     default:
       return true;

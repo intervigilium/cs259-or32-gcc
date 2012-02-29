@@ -95,5 +95,5 @@ Target RejectNegative Joined UInteger Var(or32_redzone) Init(128)
 Set the size of the stack below sp that is assumed to be safe from interrupts.
 
 mregistermask=
-Target RejectNegative Joined UInteger Var(or32_register_mask) Init(0)
+Target RejectNegative Joined UInteger
 Vector representing disabled registers, LSB disables register 0, MSB disables 31
