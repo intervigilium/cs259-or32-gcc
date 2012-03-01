@@ -2138,7 +2138,7 @@ or32_mask_registers(int reg_vector)
   const char * reg_names[] = REGISTER_NAMES;
   for (i = 0; i < 32; i++)
     {
-      if (mask & reg_vector) {
+      if (mask & reg_vector)
         {
           fix_register(reg_names[i], 1, 1);
         }
