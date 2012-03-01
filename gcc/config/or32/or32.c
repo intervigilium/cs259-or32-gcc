@@ -2159,7 +2159,7 @@ or32_handle_option (size_t code, const char *arg ATTRIBUTE_UNUSED,
     case OPT_mglibc:
       or32_libc = or32_libc_glibc;
       return false;
-    case OPT_mregistermask:
+    case OPT_mregistermask_:
       mask_registers(value);
       return true;
     default:
