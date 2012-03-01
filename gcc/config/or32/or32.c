@@ -2129,7 +2129,8 @@ or32_output_mi_thunk (FILE *file, tree thunk ATTRIBUTE_UNUSED,
     }
 }
 
-static void mask_registers(int reg_vector)
+static void
+or32_mask_registers(int reg_vector)
 {
   // fix_register cannot fix special registers though, eg. r0, r1, r9, r10
   int i;
@@ -2160,7 +2161,7 @@ or32_handle_option (size_t code, const char *arg ATTRIBUTE_UNUSED,
       or32_libc = or32_libc_glibc;
       return false;
     case OPT_mregistermask_:
-      mask_registers(value);
+      or32_mask_registers(value);
       return true;
     default:
       return true;
