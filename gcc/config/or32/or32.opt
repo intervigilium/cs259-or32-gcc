@@ -97,3 +97,11 @@ Set the size of the stack below sp that is assumed to be safe from interrupts.
 mregistermask=
 Target RejectNegative Joined UInteger
 Vector representing disabled registers, LSB disables register 0, MSB disables 31
+
+mpufencrypt
+Target Mask(PUF_ENCRYPT)
+Enable use of instructions encrypted by PUF key
+
+mpufkey=
+Target RejectNegative Joined UInteger Var(or32_puf_key)
+32-bit key extracted from PUF used to encrypt operands of keyed opcodes
